@@ -1,7 +1,6 @@
 package com.firstcode.example.coolweather.util;
 
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.firstcode.example.coolweather.db.City;
 import com.firstcode.example.coolweather.db.County;
