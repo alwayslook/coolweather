@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -41,6 +42,8 @@ public class AutoUpdateService extends Service {
 		PendingIntent pi = PendingIntent.getService(this, 0, i, 0);
 		manager.cancel(pi);
 		manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtTime, pi);
+		// Log.d("hui", "服务开启");
+		Toast.makeText(this, "后台更新天气服务开启", Toast.LENGTH_SHORT).show();
 		return super.onStartCommand(intent, flags, startId);
 	}
 
